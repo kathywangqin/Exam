@@ -133,3 +133,9 @@ ${W1_Uname}       wangqin1@haixue.com
 
 点击答题icon节
     click element    xpath=//*[@id="outlineTree"]/ul/li/ul[2]/li/ul[2]/li/ul[1]/li[4]/a/i
+
+选择类别
+    [Arguments]    ${自动化测试类别}=100463
+    click element    //*[@id="header"]/div/div[1]/div/a
+    sleep    2
+    click element    //*[@id="${自动化测试类别}"]
