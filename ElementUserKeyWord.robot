@@ -93,7 +93,7 @@ ${W1_Uname}       wangqin1@haixue.com
     断开数据库链接
 
 删除模拟试卷答题记录
-    [Arguments]    ${W1_Uname}=wangqin@haixue.com    ${LogText}='当前w1登陆用户ID='
+    [Arguments]    ${LogText}='当前w1登陆用户ID='
     链接Mysql数据库highso
     ${customerID}    Query    SELECT id from \ customer \ where email='${W1_Uname}';
     ${IntcustomerID}    set variable    ${customerID[0][0]}
@@ -111,6 +111,7 @@ ${W1_Uname}       wangqin1@haixue.com
     log    ${IntGroupConcat1}
     Execute Sql String    delete from papercatagoryresult where id in(${IntGroupConcat1});
     Execute Sql String    delete from paperresult where \ customerId=${IntcustomerID};
+    Execute Sql String    delete from \ customerdonequestionrecord where customerId=${IntcustomerID};
 
 断开数据库链接
     Disconnect from Database
