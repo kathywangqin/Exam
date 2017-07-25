@@ -1,0 +1,23 @@
+*** Settings ***
+Resource          LibraryResource.txt
+Resource          TestFlow.robot
+
+*** Variables ***
+${PaperTile_simulationTest}    「自动化」模拟测试试卷-非机考
+${papertitle1}    题库-模拟测试-嗨学网
+${papertitle2}    答题报告-题库-嗨学网
+
+*** Test Cases ***
+登陆W1
+    W1登陆流程
+
+作答模拟测试试卷
+    「模拟试卷」答题流程
+
+删除模拟测试答题记录
+    清除「模拟试卷」答题数据流程
+
+章节精炼按节答题
+    章节精炼按节答题流程
+
+*** Keywords ***
